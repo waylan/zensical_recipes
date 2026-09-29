@@ -106,6 +106,7 @@ md_in_html = {}
 toc.permalink = true
 pymdownx.arithmatex.generic = true
 pymdownx.betterem = {}
+pymdownx.blocks.details = {}
 pymdownx.blocks.html = {}
 pymdownx.caret = {}
 pymdownx.details = {}

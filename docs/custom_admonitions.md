@@ -26,7 +26,7 @@ and icon.
 
 ## Define CSS
 
-To define a custon type, with its own color and icon, ensure the
+To define a custom type, with its own color and icon, ensure the
 [`extra_css`][extra_css] configuration option is set and points to a css file.
 For example:
 
@@ -50,19 +50,19 @@ Then add the following to the css file to define a `seealso` custom admonition:
 
 ``` css
 /* Add support for `seealso` Admonition */
-.md-typeset .admonition.seealso {
+.md-typeset .admonition.seealso, .md-typeset details.seealso {
     background-color: var(--md-accent-fg-color--transparent);
 }
 
-.md-typeset .seealso>.admonition-title:before {
+.md-typeset .seealso>.admonition-title:before, .md-typeset .seealso>summary:before {
     background-color: var(--md-accent-fg-color);
 }
 
-.md-typeset .seealso>.admonition-title:after {
+.md-typeset .seealso>.admonition-title:after, .md-typeset .seealso>summary:after {
     color: var(--md-accent-fg-color);
 }
 
-.md-typeset .seealso>.admonition-title:before {
+.md-typeset .seealso>.admonition-title:before, .md-typeset .seealso>summary:before {
     --md-admonition-icon--seealso: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>');
     -webkit-mask-image: var(--md-admonition-icon--seealso);
     mask-image: var(--md-admonition-icon--seealso);
@@ -88,7 +88,22 @@ will work.
 !!! tip
 
     You can use the same technique to redefine the styles for the 12 supported
-    types. Just replace `seealso` above with the type name.
+    types. Just replace `seealso` above with the type name. Too redefine the
+    default (no type provided), then define the rules without the class
+    (remove `.seealso`).
+
+/// details | Why are CSS rules for `summary` elements included?
+    type: question
+
+You may have noticed that the CSS above also defines matching rules for
+`summary` elements, which are not used by admonitions. As it turns out,
+Zensical defines the same 12 types for [details] as are defined for
+admonitions. To maintain that consistency, I recommend defining both for any
+custom types as well. Of course, to use them, you will need to enable the
+appropriate extension.
+///
+
+[details]: https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/details/
 
 ## The Result
 
