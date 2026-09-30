@@ -13,7 +13,7 @@ are not possible out-of-the-box.
 
 While each recipe provides a complete working solution, they should be viewed
 as a starting place which can be tweaked and expanded to meet the needs of
-each unqiue site.
+each unique site.
 
 ## Official Resources
 
@@ -30,7 +30,7 @@ each unqiue site.
 
 - [Buttons](buttons.md) &mdash; Add additional button styles.
 - [Cards](cards.md) &mdash; Add customization options to grid cards.
-- [Admonitions](custom-admonitions.md) &mdash; Add addition admonition types.
+- [Admonitions](custom-admonitions.md) &mdash; Add additional admonition types.
 - [Details](details.md) &mdash; Expand details blocks.
-- [Page Header](page_header.md) &mdash; Customize various acpects of the page header.
+- [Page Header](page_header.md) &mdash; Customize various aspects of the page header.
 - [Section Icons](section_icons.md) &mdash; Define icons for navigation sections.
