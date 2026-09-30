@@ -89,3 +89,22 @@
     margin-top: 0;
 }
 
+/* Button Styles */
+.md-typeset .md-button.md-button--primary-light {
+    background: var(--md-primary-fg-color--light);
+    color: var(--md-primary-bg-color--light);
+}
+
+.md-typeset .md-button.md-button--primary-dark {
+    background: var(--md-primary-fg-color--dark);
+    color: var(--md-primary-bg-color);
+}
+
+.md-typeset .md-button.md-button--accent{
+    background: var(--md-accent-fg-color);
+    color: var(--md-accent-bg-color);
+}
+
+.md-typeset .md-button.md-button--transparent {
+    background: var(--md-accent-fg-color--transparent);
+}

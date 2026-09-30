@@ -51,7 +51,7 @@ If the accent color is `green`, the result may look like this.
 
 When you have no [repository] associated with your Zensical site, the search
 bar on the page header does not automatically move over to the right of the
-page and leaves a blank area where the respository information would normally
+page and leaves a blank area where the repository information would normally
 be. To force the search bar to align to the far right, add the following to
 `extra.css`.
 
@@ -67,6 +67,6 @@ be. To force the search bar to align to the far right, add the following to
 !!! Warning
 
     Be careful with this one. While it does accomplish the desired result, it
-    removes (hides) the respository block from the page. Therefore, even if
-    the respository configuration options are later set up, the information
+    removes (hides) the repository block from the page. Therefore, even if
+    the repository configuration options are later set up, the information
     will not show until the CSS rule is removed.
