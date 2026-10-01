@@ -262,3 +262,141 @@ Note that block cards also support darkened borders.
 
 ///
 ////
+
+## Welcome Card
+
+A welcome card is a combination of grid cards and a page title combined with a
+background image. It might be used on the home page to highlight some
+features of a product or service.
+
+
+To start, add the following CSS to `extra.css`.
+
+``` css
+/* Home Page Welcome Card */
+div#welcome {
+    padding: 1.5em;
+    border-radius: .4rem;
+    background: no-repeat center url("../images/orange_mountains.jpg");
+    background-size: cover;
+}
+
+div#welcome h1 {
+    text-align: center; 
+    background-color: var(--md-default-bg-color--light); 
+    padding: .75em;
+    border-radius: .4rem;
+    margin-bottom: .75em;
+    color: var(--md-typeset-a-color);
+    text-wrap: balance;
+}
+
+div#welcome h1 a.headerlink {
+    display: none;
+}
+
+div#feature {
+    margin: 0;
+    grid-gap: 1.5em;
+}
+
+div#feature li {
+    background-color: var(--md-default-bg-color--light);
+    border: .05rem solid var(--md-default-fg-color--lightest);
+}
+
+div#feature li p {
+    font-weight: 510;
+}
+
+div#feature li h2 {
+    color: var(--md-typeset-a-color);
+}
+
+@media print {
+    div#welcome {
+        background: none;
+    }
+
+    div#feature {
+        display: none;
+    }
+}
+```
+
+You will need to update the URL for the background image in the CSS and ensure
+it points to an image you have access to.
+
+Then build up the necessary HTML.
+
+``` markdown
+/// html | div#welcome
+
+# Welcome Card
+
+//// html | div#feature.grid.cards.center
+
+*   ## :lucide-balloon:{ .lg .middle } Cool Feature
+
+    Highlight a cool feature of your product here.
+
+    [See More](#){ .md-button .md-button--primary }
+
+*   ## :lucide-thumbs-up:{ .lg .middle } Great Benefit
+
+    Highlight a great benefit users receive by using your product.
+
+    [Learn More](#){ .md-button .md-button--primary }
+
+*   ## :material-frequently-asked-questions:{ .lg .middle } FAQs
+
+    Get answers to frequently asked questions.
+
+    [View FAQs](#){ .md-button .md-button--primary }
+////
+///
+```
+
+///// html | div.result
+/// html | div#welcome
+
+# Welcome Card
+
+//// html | div#feature.grid.cards.center
+
+*   ## :lucide-balloon:{ .lg .middle } Cool Feature
+
+    Highlight a cool feature of your product here.
+
+    [See More](#feature){ .md-button .md-button--primary }
+
+*   ## :lucide-thumbs-up:{ .lg .middle } Great Benefit
+
+    Highlight a great benefit users receive by using your product.
+
+    [Learn More](#feature){ .md-button .md-button--primary }
+
+*   ## :material-frequently-asked-questions:{ .lg .middle } FAQs
+
+    Get answers to frequently asked questions.
+
+    [View FAQs](#feature){ .md-button .md-button--primary }
+////
+///
+/////
+
+Resize your browser window and the welcome card will adjust accordingly. I
+find it best to use on a full width page. Therefore, I suggest hiding the
+navigation and table of contents on your home page (or whatever page you use
+it on).
+
+To accomplish that, in the frontmatter for the page, add the following.
+
+``` markdown
+---
+title: Home
+hide:
+    - navigation
+    - toc
+---
+```

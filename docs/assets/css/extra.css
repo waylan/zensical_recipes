@@ -89,6 +89,56 @@
     margin-top: 0;
 }
 
+/* Home Page Welcome Card */
+div#welcome {
+    padding: 1.5em;
+    border-radius: .4rem;
+    background: no-repeat center url("../images/orange_mountains.jpg");
+    background-size: cover;
+}
+
+div#welcome h1 {
+    text-align: center; 
+    background-color: var(--md-default-bg-color--light); 
+    padding: .75em;
+    border-radius: .4rem;
+    margin-bottom: .75em;
+    color: var(--md-typeset-a-color);
+    text-wrap: balance;
+}
+
+div#welcome h1 a.headerlink {
+    display: none;
+}
+
+div#feature {
+    margin: 0;
+    grid-gap: 1.5em;
+}
+
+div#feature li {
+    background-color: var(--md-default-bg-color--light);
+    border: .05rem solid var(--md-default-fg-color--lightest);
+}
+
+div#feature li p {
+    font-weight: 510;
+}
+
+div#feature li h2 {
+    color: var(--md-typeset-a-color);
+}
+
+@media print {
+    div#welcome {
+        background: none;
+    }
+
+    div#feature {
+        display: none;
+    }
+}
+
 /* Button Styles */
 .md-typeset .md-button.md-button--primary-light {
     background: var(--md-primary-fg-color--light);
