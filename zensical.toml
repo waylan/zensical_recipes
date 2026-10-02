@@ -35,7 +35,7 @@ watch = ["overrides"]
 [project.theme]
 # variant = "classic"
 custom_dir = "overrides"
-favicon = "asseets/images/cooking-pot.ico"
+favicon = "assets/images/cooking-pot.ico"
 language = "en"
 features = [
   "announce.dismiss",
