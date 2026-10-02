@@ -17,6 +17,7 @@ nav = [
     "cards.md",
     "custom_admonitions.md",
     "details.md",
+    "results.md",
   ]},
   { "Layout" = [
     "page_header.md",
@@ -48,7 +49,7 @@ features = [
   "content.tabs.link",
   "content.tooltips",
   # "header.autohide",
-  # "navigation.expand",
+  "navigation.expand",
   "navigation.footer",
   "navigation.indexes",
   # "navigation.instant",

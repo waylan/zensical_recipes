@@ -33,6 +33,7 @@ each unique site.
     - [Cards](cards.md) &mdash; Add customization options to grid cards.
     - [Admonitions](custom_admonitions.md) &mdash; Add additional admonition types.
     - [Details](details.md) &mdash; Expand details blocks.
+    - [Code Results](results.md) &mdash; Show output of a code block in nested `results` block.
 - Layout
     - [Page Header](page_header.md) &mdash; Customize various aspects of the page header.
     - [Section Icons](section_icons.md) &mdash; Define icons for navigation sections.
