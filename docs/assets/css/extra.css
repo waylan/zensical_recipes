@@ -1,3 +1,13 @@
+/* Highlight the bottom border of the active nav item. */
+.md-tabs .md-tabs__item--active {
+    border-bottom: .1rem solid var(--md-accent-fg-color);
+}
+
+/* Color Logo */
+.md-header .md-header__button.md-logo svg {
+    stroke: var(--md-accent-fg-color);
+}
+
 /* Add support for `seealso` Admonition */
 .md-typeset .admonition.seealso, .md-typeset details.seealso {
     background-color: var(--md-accent-fg-color--transparent);

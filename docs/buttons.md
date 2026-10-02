@@ -1,5 +1,6 @@
 ---
 icon: lucide/rectangle-horizontal
+description: Add additional button styles.
 ---
 
 # Buttons
