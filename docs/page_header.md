@@ -27,6 +27,25 @@ points to a css file. For example:
         - assets/stylesheets/extra.css
     ```
 
+## Colorize the Logo Icon
+
+You can assign any icon as the [logo] for the site. To override the default
+color, add the following to `extra.css`, which uses the [accent color].
+
+[logo]: https://zensical.org/docs/setup/logo-and-icons/#logo
+
+``` css
+/* Color Logo */
+.md-header .md-header__button.md-logo svg {
+    stroke: var(--md-accent-fg-color);
+}
+```
+
+See the logo above for this site as an example.
+
+Note that this has no effect on an image based logo. If you are using an
+image, you can edit the image to be whatever you want.
+
 ## Highlight Active Tab with Color
 
 When [navigation tabs] are enabled, by default, Zensical will highlight the
