@@ -14,19 +14,21 @@ Zensical supports Accordions (using `details` blocks) out of the box, although
 
 First, enable the extension by adding `pymdownx.blocks.details` to the list of `markdown.extensions`.
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project.markdown_extensions]
-    pymdownx.blocks.details = {}
-    ```
+``` toml
+[project.markdown_extensions]
+pymdownx.blocks.details = {}
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    markdown_extensions:
-    - pymdownx.blocks.details
-    ```
+``` yaml
+markdown_extensions:
+- pymdownx.blocks.details
+```
+///
 
 ## Markdown Syntax
 
@@ -68,19 +70,21 @@ points to a css file. For example:
 
 [extra_css]: https://zensical.org/docs/customization/#additional-css
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project]
-    extra_css = ["assets/stylesheets/extra.css"]
-    ```
+``` toml
+[project]
+extra_css = ["assets/stylesheets/extra.css"]
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    extra_css:
-        - assets/stylesheets/extra.css
-    ```
+``` yaml
+extra_css:
+    - assets/stylesheets/extra.css
+```
+///
 
 Then add the following to the css file.
 

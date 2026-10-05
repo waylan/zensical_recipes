@@ -32,19 +32,21 @@ For example:
 
 [extra_css]: https://zensical.org/docs/customization/#additional-css
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
     ``` toml
     [project]
     extra_css = ["assets/stylesheets/extra.css"]
     ```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
     ``` yaml
     extra_css:
         - assets/stylesheets/extra.css
     ```
+///
 
 Then add the following to the css file to define a `seealso` custom admonition:
 
@@ -134,27 +136,28 @@ like the title to automatically be defined for a type, you can use the
 
 In your configuration file replace the `admonition` extension with:
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project.markdown_extensions]
-    pymdownx.blocks.admonition = {
-        types = [
-            {'name': 'seealso', 'class': 'seealso', 'title': 'See Also'}
-        ]
-    }
-    ```
+``` toml
+[project.markdown_extensions]
+pymdownx.blocks.admonition.types = [
+        {'name': 'seealso', 'class': 'seealso', 'title': 'See Also'}
+    ]
+}
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    markdown_extensions:
-    - pymdownx.blocks.admonition:
-        types:
-            - name: seealso
-              class: seealso
-              title: See Also
-    ```
+``` yaml
+markdown_extensions:
+- pymdownx.blocks.admonition:
+    types:
+        - name: seealso
+          class: seealso
+          title: See Also
+```
+///
 
 You will need to use the different syntax for defining admonitions, but you
 will not need to define the title each time.

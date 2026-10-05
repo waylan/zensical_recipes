@@ -55,34 +55,36 @@ later add a custom domain.
 [custom domain]: https://developers.cloudflare.com/workers/configuration/routing/custom-domains/
 [workers.dev]: https://developers.cloudflare.com/workers/configuration/routing/workers-dev/
 
-=== "`workers.dev`"
+/// tab | `workers.dev`
 
-    If you are using a `workers.dev` subdomain provided by Cloudflare, you can
-    add a line to `wrangler.toml` with `workers_dev = true`, but that is not
-    necessary so long as no `[[routes]]` section is configured.
+If you are using a `workers.dev` subdomain provided by Cloudflare, you can
+add a line to `wrangler.toml` with `workers_dev = true`, but that is not
+necessary so long as no `[[routes]]` section is configured.
 
-    Your `workers.dev` subdomain will take the format `<YOUR PROJECT
-    NAME>.<YOUR_ACCOUNT_SUBDOMAIN>.workers.dev`. `<YOUR PROJECT NAME>` is the
-    `name` you defined in `wrangler.toml` above and
-    `<YOUR_ACCOUNT_SUBDOMAIN>` is a subdomain shared across all projects
-    within the same account (usually defaults to your username).
+Your `workers.dev` subdomain will take the format `<YOUR PROJECT
+NAME>.<YOUR_ACCOUNT_SUBDOMAIN>.workers.dev`. `<YOUR PROJECT NAME>` is the
+`name` you defined in `wrangler.toml` above and
+`<YOUR_ACCOUNT_SUBDOMAIN>` is a subdomain shared across all projects
+within the same account (usually defaults to your username).
+///
 
-=== "Custom Domain"
+/// tab | Custom Domain
 
-    If you are using a [custom domain], you should then add the following
-    lines to your `wrangler.toml` file.
+If you are using a [custom domain], you should then add the following
+lines to your `wrangler.toml` file.
 
-    ``` toml
-    workers_dev = false
+``` toml
+workers_dev = false
 
-    [[routes]]
-    pattern = "example.com"
-    custom_domain = true
-    ```
+[[routes]]
+pattern = "example.com"
+custom_domain = true
+```
 
-    Replace `example.com` with your custom domain. Be sure to have properly
-    configured your custom domain with Cloudflare. A domain must be managed by
-    Cloudflare to be available for use.
+Replace `example.com` with your custom domain. Be sure to have properly
+configured your custom domain with Cloudflare. A domain must be managed by
+Cloudflare to be available for use.
+///
 
 Finally, add the following to `wrangler.toml` to tell Cloudflare about the
 files in your project.

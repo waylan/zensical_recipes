@@ -16,19 +16,21 @@ points to a css file. For example:
 
 [extra_css]: https://zensical.org/docs/customization/#additional-css
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project]
-    extra_css = ["assets/stylesheets/extra.css"]
-    ```
+``` toml
+[project]
+extra_css = ["assets/stylesheets/extra.css"]
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    extra_css:
-        - assets/stylesheets/extra.css
-    ```
+``` yaml
+extra_css:
+    - assets/stylesheets/extra.css
+```
+///
 
 I prefer to use the [`pymdownx.blocks.html`][pymdownx.blocks.html] plugin
 rather than raw HTML. Therefore, all examples below use the blocks syntax. To
@@ -37,20 +39,21 @@ enable the extension, add `pymdownx.blocks.html` to the list of
 
 [pymdownx.blocks.html]: https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/html/
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
     ``` toml
     [project.markdown_extensions]
     pymdownx.blocks.html = {}
     ```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
     ``` yaml
     markdown_extensions:
     - pymdownx.blocks.html
     ```
-
+///
 
 ## Card Headings
 

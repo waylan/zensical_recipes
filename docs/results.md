@@ -19,275 +19,236 @@ extension.
 
 [pymdownx.blocks.html]: https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/html/
 
-=== "Raw HTML"
+/// tab | Raw HTML
 
-    To use raw HTML, ensure that the [`md_in_html`][md_in_html] extension is
-    enabled.
+To use raw HTML, ensure that the [`md_in_html`][md_in_html] extension is
+enabled.
 
-    === "`zensical.toml`"
+//// tab | `zensical.toml`
 
-        ``` toml
-        [project.markdown_extensions]
-        md_in_html = {}
-        ```
+``` toml
+[project.markdown_extensions]
+md_in_html = {}
+```
 
-    === "`mkdocs.yml`"
+////
 
-        ``` yaml
-        markdown_extensions:
-        - md_in_html
-        ```
+//// tab | `mkdocs.yml`
 
-=== "HTML Blocks"
+``` yaml
+markdown_extensions:
+- md_in_html
+```
 
-    To enable the HTML Blocks extension, add `pymdownx.blocks.html` to the
-    list of `markdown.extensions`.
+////
+///
 
-    === "`zensical.toml`"
+/// tab | HTML Blocks
 
-        ``` toml
-        [project.markdown_extensions]
-        pymdownx.blocks.html = {}
-        ```
+To enable the HTML Blocks extension, add `pymdownx.blocks.html` to the list of
+`markdown.extensions`.
 
-    === "`mkdocs.yml`"
+//// tab | `zensical.toml`
 
-        ``` yaml
-        markdown_extensions:
-        - pymdownx.blocks.html
-        ```
+``` toml
+[project.markdown_extensions]
+pymdownx.blocks.html = {}
+```
+
+////
+
+//// tab | `mkdocs.yml`
+
+``` yaml
+markdown_extensions:
+- pymdownx.blocks.html
+```
+
+////
+///
 
 [md_in_html]: https://python-markdown.github.io/extensions/md_in_html/
 
 ## The Basic Syntax
 
-A result block will be displayed when a block is assigned the class `highlight`
-followed by its next sibling being assigned the class `result`.
-
-As an example, consider the following Markdown.
-
-=== "Raw HTML"
-
-    ``` text
-    <div class="highlight" style="background: var(--md-code-bg-color); padding: .5em 1em;">
-    <p>Highlight content</p>
-    </div>
-
-    <div class="result">
-    <p>Result Content</p>
-    </div>
-    ```
-
-    //// html | div.result
-        attrs: {style: "padding-top: 1em"}
-    /// html | div.highlight
-        attrs: {style: "background: var(--md-code-bg-color); padding: .5em 1em;"}
-    Highlight content
-    ///
-
-    /// html | div.result
-    Result Content
-    ///
-    ////
-
-=== "HTML Blocks"
-
-    ``` text
-    /// html | div.highlight
-        attrs: 
-            style: "background: var(--md-code-bg-color); padding: .5em 1em;"
-    Highlight content
-    ///
-
-    /// html | div.result
-    Result Content
-    ///
-    ```
-
-    //// html | div.result
-        attrs: {style: "padding-top: 1em"}
-    /// html | div.highlight
-        attrs: {style: "background: var(--md-code-bg-color); padding: .5em 1em;"}
-    Highlight content
-    ///
-
-    /// html | div.result
-    Result Content
-    ///
-    ////
-
-As you can see, we needed to define some custom styles to get it to look
-mostly right. There is more work to do to properly define a radius for the
-top corners and there is still room for margin and padding adjustments.
-
-While not particularly useful this way, it does demonstrate the basic
-requirements. So long as the `.highlight` block has a background which
-matches the background of code blocks, the `.result` block's border is merged
-with the bottom and nests its content.
-
+A result block will be displayed when a block is assigned the class
+`highlight` followed by its next sibling being assigned the class `result`.
 The feature is intended to be used with Zensical's default [code highlighting
 configuration]. When configured as recommended in the linked documentation,
-code blocks will meet all of the requirements for the first block. All you need
-to do is follow up a code block with a result block.
+code blocks will meet all of the requirements for the first block. All you
+need to do is follow up a code block with a result block.
 
 [code highlighting configuration]: https://zensical.org/docs/authoring/code-blocks/#configuration
 
-=== "Raw HTML"
+////// tab | Raw HTML
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
+```` text
+``` markdown
+Some *Markdown* text.
+```
 
-    <div class="result" markdown>
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    </div>
-    ````
+<div class="result" markdown>
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+</div>
+````
 
-    //// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
+//// html | div.result
+``` markdown
+Some *Markdown* text.
+```
 
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    ///
-    ////
+<div class="result" markdown>
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+</div>
+////
+//////
 
-=== "HTML Blocks"
+////// tab | HTML Blocks
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
+```` text
+``` markdown
+Some *Markdown* text.
+```
 
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    ///
-    ````
+/// html | div.result
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+///
+````
 
-    //// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
+//// html | div.result
+``` markdown
+Some *Markdown* text.
+```
 
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    ///
-    ////
+/// html | div.result
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+///
+////
+//////
 
-Alternatively, you could show the result as rendered HTML, rather than as source code.
+As you can see, a code block which shows the rendered output of the Markdown
+source text is wrapped in an HTML block which consists of a `<div>` element
+that has the class `result` assigned to it. Zensical neatly nests the
+`result` block within the border of the code lock before it.
 
-=== "Raw HTML"
+The result block does not need to contain a code block. For example, you could
+show the result as rendered HTML, rather than as source code.
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
+////// tab | Raw HTML
 
-    <div class="result" markdown>
-    Some *Markdown* text.
-    </div>
-    ````
+```` text
+``` markdown
+Some *Markdown* text.
+```
 
-    //// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
+<div class="result" markdown>
+Some *Markdown* text.
+</div>
+````
 
-    /// html | div.result
-    Some *Markdown* text.
-    ///
-    ////
+//// html | div.result
+``` markdown
+Some *Markdown* text.
+```
 
-=== "HTML Blocks"
+<div class="result" markdown>
+Some *Markdown* text.
+</div>
+////
+//////
+////// tab | HTML Blocks
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
+```` text
+``` markdown
+Some *Markdown* text.
+```
 
-    /// html | div.result
-    Some *Markdown* text.
-    ///
-    ````
+/// html | div.result
+Some *Markdown* text.
+///
+````
 
-    //// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
+//// html | div.result
+``` markdown
+Some *Markdown* text.
+```
 
-    /// html | div.result
-    Some *Markdown* text.
-    ///
-    ////
+/// html | div.result
+Some *Markdown* text.
+///
+////
+//////
 
 You could even nest multiple levels deep.
 
-=== "Raw HTML"
+////// tab | Raw HTML
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
-    <div class="result" markdown>
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    <div class="result" markdown>
-    Some *Markdown* text.
-    </div>
-    </div>
-    ````
+```` text
+``` markdown
+Some *Markdown* text.
+```
+<div class="result" markdown>
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+<div class="result" markdown>
+Some *Markdown* text.
+</div>
+</div>
+````
 
-    ///// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    //// html | div.result
-    Some *Markdown* text.
-    ////
-    ///
-    /////
+///// html | div.result
+``` markdown
+Some *Markdown* text.
+```
+<div class="result" markdown>
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+<div class="result" markdown>
+Some *Markdown* text.
+</div>
+</div>
+/////
+//////
+////// tab | HTML Blocks
 
-=== "HTML Blocks"
+```` text
+``` markdown
+Some *Markdown* text.
+```
+/// html | div.result
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+//// html | div.result
+Some *Markdown* text.
+////
+///
+````
 
-    ```` text
-    ``` markdown
-    Some *Markdown* text.
-    ```
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    //// html | div.result
-    Some *Markdown* text.
-    ////
-    ///
-    ````
+///// html | div.result
+``` markdown
+Some *Markdown* text.
+```
+/// html | div.result
+``` html
+<p>Some <em>Markdown</em> text.</p>
+```
+//// html | div.result
+Some *Markdown* text.
+////
+///
+/////
+//////
 
-    ///// html | div.result
-    ``` markdown
-    Some *Markdown* text.
-    ```
-    /// html | div.result
-    ``` html
-    <p>Some <em>Markdown</em> text.</p>
-    ```
-    //// html | div.result
-    Some *Markdown* text.
-    ////
-    ///
-    /////
+Nesting only works if every level contains a code block with the exception of
+the final level.

@@ -13,28 +13,31 @@ for defining an icon.
 
 Consider the following navigation:
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project]
-    nav = [
-      { "Home" = "index.md" },
-      { "About" = [
-        "about/vision.md",
-        "about/team.md",
-      ] },
-    ]
-    ```
+``` toml
+[project]
+nav = [
+  { "Home" = "index.md" },
+  { "About" = [
+    "about/vision.md",
+    "about/team.md",
+  ] },
+]
+```
+///
 
-=== "`mkdocs.yml`"
 
-    ``` yaml
-    nav:
-      - Home: index.md
-      - About:
-        - about/vision.md
-        - about/team.md
-    ```
+/// tab | `mkdocs.yml`
+
+``` yaml
+nav:
+  - Home: index.md
+  - About:
+    - about/vision.md
+    - about/team.md
+```
+///
 
 Assuming every page has a page icon defined, the navigation might look like this.
 
@@ -54,19 +57,21 @@ First, configure a [theme override directory][theme overrides].
 
 [theme overrides]: https://zensical.org/docs/customization/#configuring-overrides
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project.theme]
-    custom_dir = "overrides"
-    ```
+``` toml
+[project.theme]
+custom_dir = "overrides"
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    theme:
-      custom_dir: overrides
-    ```
+``` yaml
+theme:
+  custom_dir: overrides
+```
+///
 
 Then, copy the contents of <https://github.com/zensical/ui/blob/master/src/partials/nav-item.html>
 to `overrides/partials/nav-item.html`. From now on, when building your site,
@@ -102,21 +107,23 @@ at the indicated location.
 Then in the `zensical.toml` configuration file add the following for each
 section that you want to define an icon.
 
-=== "`zensical.toml`"
-    ```
-    [project.extra.section_icons]
-    "About" = "lucide/info"
-    "Other" = "lucide/ice-cream-cone"
-    ```
+/// tab | `zensical.toml`
+```
+[project.extra.section_icons]
+"About" = "lucide/info"
+"Other" = "lucide/ice-cream-cone"
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    extra:
-      section_icons:
-        About: lucide/info
-        Other: lucide/ice-cream-cone
-    ```
+``` yaml
+extra:
+  section_icons:
+    About: lucide/info
+    Other: lucide/ice-cream-cone
+```
+///
 
 The above configuration defines icons for two sections: `About` and `Other`.
 So long as the section title here is an exact match to the title as defined

@@ -13,19 +13,21 @@ points to a css file. For example:
 
 [extra_css]: https://zensical.org/docs/customization/#additional-css
 
-=== "`zensical.toml`"
+/// tab | `zensical.toml`
 
-    ``` toml
-    [project]
-    extra_css = ["assets/stylesheets/extra.css"]
-    ```
+``` toml
+[project]
+extra_css = ["assets/stylesheets/extra.css"]
+```
+///
 
-=== "`mkdocs.yml`"
+/// tab | `mkdocs.yml`
 
-    ``` yaml
-    extra_css:
-        - assets/stylesheets/extra.css
-    ```
+``` yaml
+extra_css:
+    - assets/stylesheets/extra.css
+```
+///
 
 ## Colorize the Logo Icon
 
